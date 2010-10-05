@@ -90,13 +90,6 @@ module Heroku::Command
       display "Repo size:      #{format_bytes(attrs[:repo_size])}" if attrs[:repo_size]
       display "Slug size:      #{format_bytes(attrs[:slug_size])}" if attrs[:slug_size]
       display "Stack:          #{attrs[:stack]}" if attrs[:stack]
-      if attrs[:database_size]
-        data = format_bytes(attrs[:database_size])
-        if tables = attrs[:database_tables]
-          data = data.gsub('(empty)', '0K') + " in #{tables} table#{'s' if tables.to_i != 1}"
-        end
-        display "Data size:      #{data}"
-      end
 
       if attrs[:cron_next_run]
         display "Next cron:      #{format_date(attrs[:cron_next_run])} (scheduled)"
