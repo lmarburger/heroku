@@ -3,7 +3,7 @@ module Heroku::Command
     def index
       installed = heroku.installed_addons(app)
       if installed.empty?
-        display "No addons installed"
+        display "No add-ons installed"
       else
         available, pending = installed.partition { |a| a['configured'] }
         available.map { |a| a['name'] }.sort.each do |addon|
@@ -21,7 +21,7 @@ module Heroku::Command
     def info
       addons = heroku.addons
       if addons.empty?
-        display "No addons available currently"
+        display "No add-ons available currently"
       else
         available, beta = addons.partition { |a| !a['beta'] }
         display_addons(available)
@@ -122,7 +122,7 @@ module Heroku::Command
         args.each do |arg|
           key, value = arg.strip.split('=', 2)
           if value.nil?
-            error("Non-config value \"#{arg}\".\nEverything after the addon name should be a key=value pair")
+            error("Non-config value \"#{arg}\".\nEverything after the add-on name should be a key=value pair")
           else
             config[key] = value
           end

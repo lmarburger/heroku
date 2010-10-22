@@ -101,7 +101,7 @@ module Heroku::Command
       end
 
       unless attrs[:addons].empty?
-        display "Addons:         " + attrs[:addons].map { |a| a['description'] }.join(', ')
+        display "Add-ons:        " + attrs[:addons].map { |a| a['description'] }.join(', ')
       end
 
       display "Owner:          #{attrs[:owner]}"

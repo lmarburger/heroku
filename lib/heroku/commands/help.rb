@@ -90,11 +90,11 @@ module Heroku::Command
         group.command 'bundles:download <bundle>',    'download the named bundle'
         group.command 'bundles:destroy <bundle>',     'destroy the named bundle'
         group.space
-        group.command 'addons',                       'list installed addons'
-        group.command 'addons:info',                  'list all available addons'
-        group.command 'addons:add name [key=value]',  'install addon (with zero or more config vars)'
-        group.command 'addons:remove name',           'uninstall an addons'
-        group.command 'addons:clear',                 'uninstall all addons'
+        group.command 'addons',                       'list installed add-ons'
+        group.command 'addons:info',                  'list all available add-ons'
+        group.command 'addons:add name [key=value]',  'install add-on (with zero or more config vars)'
+        group.command 'addons:remove name',           'uninstall an add-ons'
+        group.command 'addons:clear',                 'uninstall all add-ons'
         group.space
         group.command 'destroy',                      'destroy the app permanently'
       end
