@@ -128,7 +128,7 @@ module Heroku::Command
           end
         end
 
-        display "#{label} #{addon} to #{app}... ", false
+        display "#{label} to #{addon} for #{app}... ", false
         display addon_run { install_or_upgrade.call(addon, config) }
       end
   end
