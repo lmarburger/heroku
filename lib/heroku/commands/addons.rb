@@ -34,12 +34,14 @@ module Heroku::Command
 
     def add
       configure_addon('Adding') do |addon, config|
+        display "Adding #{addon} to #{app}... ", false
         heroku.install_addon(app, addon, config)
       end
     end
 
     def upgrade
       configure_addon('Upgrading') do |addon, config|
+        display "Upgrading to #{addon} for #{app}... ", false
         heroku.upgrade_addon(app, addon, config)
       end
     end
@@ -128,7 +130,6 @@ module Heroku::Command
           end
         end
 
-        display "#{label} to #{addon} for #{app}... ", false
         display addon_run { install_or_upgrade.call(addon, config) }
       end
   end
