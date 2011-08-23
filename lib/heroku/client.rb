@@ -124,11 +124,11 @@ class Heroku::Client
   end
 
   def add_domain(app_name, domain)
-    post("/apps/#{app_name}/domains", domain).to_s
+    post("/apps/#{app_name}/domains", domain, :accept => 'application/json').to_s
   end
 
   def remove_domain(app_name, domain)
-    delete("/apps/#{app_name}/domains/#{domain}").to_s
+    delete("/apps/#{app_name}/domains/#{domain}", :accept => 'application/json').to_s
   end
 
   def remove_domains(app_name)
